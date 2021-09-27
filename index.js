@@ -60,7 +60,7 @@ app.get('/info', (req, res, next) => {
  app.use('/*', createProxyMiddleware({
     // target: API_SERVICE_URL,
     target: process.env.issuer,
-    changeOrigin: true,
+    changeOrigin: false,
     pathRewrite: {
         [`^/json_placeholder`]: '',
     },
