@@ -57,6 +57,10 @@ app.get('/info', (req, res, next) => {
     res.send('This is a proxy service.');
 });
 
+app.get('/favico.ico', (req, res) => {
+    res.sendStatus(200);
+});
+
  app.use('/*', createProxyMiddleware({
     // target: API_SERVICE_URL,
     target: process.env.issuer,
