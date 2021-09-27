@@ -10,12 +10,11 @@ const Mustache = require('mustache')
 
 /*********************************************** */
 
-// Create Express Server
 const app = express();
 
 // Configuration
 const PORT = process.env.PORT;
-const HOST = "localhost";
+// const HOST = "localhost";
 // const API_SERVICE_URL = "https://microdemos.oktapreview.com";
 // const API_SERVICE_URL = "https://udp-expedia-oie.oktapreview.com";
 // const API_SERVICE_URL = "https://expedia-oie.dannyfuhriman.com"
@@ -41,7 +40,6 @@ require('./routes/authz_code')(app)
 app.get('/info', (req, res, next) => {
     res.send('This is a proxy service.');
 });
-
 
 app.get('/', function (req, res) {
 
@@ -69,6 +67,10 @@ app.get('/info', (req, res, next) => {
  }));
 
  // Start the Proxy
-app.listen(PORT, HOST, () => {
-    console.log(`Starting Proxy at ${HOST}:${PORT}`);
- });
+// app.listen(PORT, HOST, () => {
+//     console.log(`Starting Proxy at ${HOST}:${PORT}`);
+//  });
+
+ app.listen(PORT, function () {
+	console.log('App listening on port ' + PORT + '...')
+})
