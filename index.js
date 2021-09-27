@@ -14,7 +14,7 @@ const Mustache = require('mustache')
 const app = express();
 
 // Configuration
-const PORT = 3000;
+const PORT = process.env.PORT;
 const HOST = "localhost";
 // const API_SERVICE_URL = "https://microdemos.oktapreview.com";
 // const API_SERVICE_URL = "https://udp-expedia-oie.oktapreview.com";
